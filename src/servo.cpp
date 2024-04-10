@@ -1,8 +1,10 @@
 #include "servo.h"
 #include "config.h"
 
-void servoConfig();
+void newTestServo();
 void testServo();
+
+ServoMotor gripper
 
 //TODO make a timer independed on a milis timer inoder to move the servo without delay
 //TODO use a class for reusing the functions
@@ -11,27 +13,25 @@ void testServo();
 * this class is for controlling all the servo functions
 * @ servoPin is for attaching a 
 */
-class Servo {
+class ServoMotor {
 public:
   //servo values
   Servo myServo
   
-  int servoPin;
   int servoPosition;
   int minimumPosition;
   int maximumPosition;
 
   //servo methodes
-
   /**
   * sets the pin to the servo
   */
-  void servoConfig() {
+  void servoConfig(pin) {
     /*shoulderservo.attach(SHOULDER_SERVO_PIN);
     elbowServo.attach(ELBOW_SERVO_PIN);
     wristservo.attach(WRITS_SERVO_PIN);
     gripservo.attach(GRIP_SERVO_PIN);*/
-    myServo.attach(serovPin);
+    myServo.attach(pin);
   }
 
   /**
@@ -49,15 +49,22 @@ public:
   /**
   * this program is for moving the servo to a position
   */
-  void moveServo (int angle){
+  void moveServo (int step, double currentPosition){
     
     Seral.print("the servo step is ");
-    Serial.println(angle);
+    Serial.println(stepsToMove(10, 50, 1000) + currentPosition);
   
   }
 };
 
+//this is a tests program for the servo with using the clas
+void newTestServoSetup(){
+  gripper.servoConfig(9)
 
+}
+void newTestServo(){
+  gripper.
+}
 
 /**
 * this program is for tseting the range of the servo's
